@@ -48,7 +48,7 @@ body {
     width: 700px;
     height: 700px;
     background: rgba(255, 255, 255, 0.5);
-    box-shadow: 36px 24px 0 rgba(160, 160, 160, 0.5);  /* Mantengo tu sombra */
+    box-shadow: 36px 24px 0 rgba(160, 160, 160, 0.5);
     border: 15px solid var(--color-primary);
     border-radius: 50%;
     overflow: hidden;
