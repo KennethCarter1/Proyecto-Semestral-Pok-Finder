@@ -1,1 +1,123 @@
+/* ================================
+   Variables del Profesor
+================================ */
+:root {
+    /* Colores principales */
+    --color-bg: #f5e6d3;           
+    --color-primary: #2d2d2d;    
+    --color-accent: #ffcc00;      
+    --color-secondary: #ff6b6b;   
+    
+    /* Colores de estado */
+    --color-success: #4ecdc4;      
+    --color-error: #ff6b6b;        
+    --color-warning: #ffa500;      
+    
+    /* Badges de origen */
+    --color-api: #4ecdc4;          
+    --color-cache: #ffcc00;        
+    --color-expired: #ffa500;      
+    
+    /* Bordes y sombras */
+    --border-width: 4px;
+    --border-color: #2d2d2d;
+    --shadow: 6px 6px 0px #2d2d2d;
+    
+    /* Tipografía */
+    --font-family: 'Courier New', monospace;
+}
 
+/* ================================
+   Kenneth - Index
+================================ */
+
+body {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    background-image: radial-gradient(var(--color-primary) 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+}
+
+
+.KC-pokebola {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 36px 24px 0 rgba(160, 160, 160, 0.5);  /* Mantengo tu sombra */
+    border: 15px solid var(--color-primary);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.KC-rotar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-19deg);
+    transform-origin: center;
+}
+
+.KC-mitad-superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 107, 107, 0.9);
+    border-top-left-radius: 100% 200px;
+    border-top-right-radius: 100% 200px;
+}
+
+
+.KC-mitad-inferior {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 2;
+}
+
+
+.KC-franja {
+    position: absolute;
+    top: 290px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--color-primary);
+}
+
+
+.KC-boton-central {
+    position: absolute;
+    top: 220px;
+    left: 240px;
+    width: 180px;
+    height: 180px;
+    background: white;
+    background-image: radial-gradient(var(--color-primary) 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    border: 20px solid var(--color-primary);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Botón interior */
+.KC-boton-interno {
+    position: absolute;
+    top: 240px;
+    left: 260px;
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    z-index: 3;
+}
