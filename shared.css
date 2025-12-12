@@ -47,7 +47,8 @@ body {
     position: relative;
     width: 700px;
     height: 700px;
-    background: rgba(255, 255, 255, 0.5);
+    background:#ffffff;
+    opacity: 0.9;
     box-shadow: 36px 24px 0 rgba(160, 160, 160, 0.5);
     border: 15px solid var(--color-primary);
     border-radius: 50%;
@@ -69,7 +70,8 @@ body {
     left: 0;
     width: 100%;
     height: 50%;
-    background: rgba(255, 107, 107, 0.9);
+    background: #ff6b6b;
+    opacity: 0.9;
     border-top-left-radius: 100% 200px;
     border-top-right-radius: 100% 200px;
 }
@@ -81,7 +83,8 @@ body {
     left: 0;
     width: 100%;
     height: 50%;
-    background: rgba(255, 255, 255, 0.6);
+    background: #ffffff;
+    opacity: 0.6;
     z-index: 2;
 }
 
@@ -98,11 +101,11 @@ body {
 
 .KC-boton-central {
     position: absolute;
-    top: 220px;
-    left: 240px;
-    width: 180px;
-    height: 180px;
-    background: white;
+    top: 240px;
+    left: 270px;
+    width: 120px;
+    height: 120px;
+    background: #ffffff;
     background-image: radial-gradient(var(--color-primary) 1.5px, transparent 1.5px);
     background-size: 20px 20px;
     border: 20px solid var(--color-primary);
@@ -113,11 +116,12 @@ body {
 /* Botón interior */
 .KC-boton-interno {
     position: absolute;
-    top: 240px;
-    left: 260px;
-    width: 180px;
-    height: 180px;
-    background: rgba(255, 255, 255, 0.8);
+    top: 260px;
+    left: 290px;
+    width: 120px;
+    height: 120px;
+    background: #ffffff;
+    opacity: 0.8;
     border-radius: 50%;
     z-index: 3;
 }
