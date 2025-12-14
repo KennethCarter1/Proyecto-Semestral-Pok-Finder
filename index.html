@@ -5,23 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POKE-API</title>
     <link rel="stylesheet" href="shared.css">
+    
 </head>
 <body>
 
+    <div class="KC-Aplicacion-Web">
+
+
+
         <!-- FONDO DE PANTALLA -->
 
-    <div class="KC-pokebola">
-         <div class="KC-rotar">
-            <div class="KC-mitad-superior"></div>
-            <div class="KC-mitad-inferior"></div>
-            <div class="KC-franja"></div>
-            <div class="KC-boton-central"></div>
-            <div class="KC-boton-interno"></div>
+        <div class="KC-pokebola">
+            <div class="KC-rotar">
+                <div class="KC-mitad-superior"></div>
+                <div class="KC-mitad-inferior"></div>
+                <div class="KC-franja"></div>
+                <div class="KC-boton-central"></div>
+                <div class="KC-boton-interno"></div>
+            </div>
         </div>
+
+        <div class="KC-Main">
+
+            <!-- TITULO DE LA PAGINA -->
+
+                <div class="KC-Titulo">
+                    <h1>POKÉMON FINDER</h1>
+                </div>
+                
+            <!-- BARRA DE NAVEGACION -->
+
+                <div class="KC-navbar">
+                    <button class="KC-boton-primario">🔍BUSCAR</button>
+                    <a href="Historico.html">📜HISTÓRICO</a>
+                    <a href="vs.html">⚔️VS</a>
+                    <a href="Favoritos.html">❤️FAVORITOS</a>
+                </div>
+
+
+            <!-- AREA DE BUSQUEDA -->
+
+            <div class="KC-Pokemon-Busqueda">
+<div class="KC-campo-selector">
+    <select class="KC-seleccion" id="KC-modo-busqueda">
+        <option value="KC-pokemon">👾POKÉMON</option>
+        <option value="KC-habilidad">⚡HABILIDADES</option>
+    </select>
+</div>
+                <input type="text" class="KC-input-busqueda" placeholder="NOMBRE O ID...">
+                <button class="KC-boton-buscar">BUSCAR</button>
+            </div>
+
+            <!-- AREA DE RESULTADOS -->
+
+            <div class="KC-Resultado"></div>
+
+
+
+        </div>
+
     </div>
 
-        <!-- FONDO DE PANTALLA -->
-
-        
+<script src="shared.js"></script>
 </body>
 </html>
