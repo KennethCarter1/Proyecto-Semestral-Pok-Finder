@@ -100,8 +100,10 @@
                             if (!entrada || !entrada.ts) {
                                 if (entrada && entrada.data) {
                                     // Registramos lo que eliminamos para actualizar histórico
-                                    if (entrada.data.id !== undefined && entrada.data.id !== null) idsEliminados.add(entrada.data.id);
-                                    if (entrada.data.name) nombresEliminados.add(String(entrada.data.name).toLowerCase());
+                                    if (entrada.data.id !== undefined && entrada.data.id !== null) 
+                                        idsEliminados.add(entrada.data.id);
+                                    if (entrada.data.name) 
+                                        nombresEliminados.add(String(entrada.data.name).toLowerCase());
                                 }
                                 delete cache[k]; 
                                 cambio = true; 
@@ -110,8 +112,10 @@
                             // Si la entrada ha expirado (más de 24 horas), la eliminamos
                             if ((ahora - entrada.ts) > state.tiempoCache) {
                                 if (entrada && entrada.data) {
-                                    if (entrada.data.id !== undefined && entrada.data.id !== null) idsEliminados.add(entrada.data.id);
-                                    if (entrada.data.name) nombresEliminados.add(String(entrada.data.name).toLowerCase());
+                                    if (entrada.data.id !== undefined && entrada.data.id !== null) 
+                                        idsEliminados.add(entrada.data.id);
+                                    if (entrada.data.name) 
+                                        nombresEliminados.add(String(entrada.data.name).toLowerCase());
                                 }
                                 delete cache[k]; 
                                 cambio = true;
@@ -171,8 +175,10 @@
                 
                 // Generamos posibles variaciones del término de búsqueda
                 const posibles = [clave];
-                if (clave.indexOf('-') !== -1) posibles.push(clave.replace(/-/g, ' '));
-                if (clave.indexOf(' ') !== -1) posibles.push(clave.replace(/\s+/g, '-'));
+                if (clave.indexOf('-') !== -1) 
+                    posibles.push(clave.replace(/-/g, ' '));
+                if (clave.indexOf(' ') !== -1) 
+                    posibles.push(clave.replace(/\s+/g, '-'));
                 
                 // Primero buscamos con las variaciones exactas
                 if (cache) {
@@ -187,8 +193,10 @@
                     // Búsqueda exhaustiva por coincidencias de nombre o ID
                     for (const k of Object.keys(cache)) {
                         const entrada = cache[k];
-                        if (!entrada || !entrada.ts || !entrada.data) continue;
-                        if ((ahora - entrada.ts) > state.tiempoCache) continue;
+                        if (!entrada || !entrada.ts || !entrada.data)
+                             continue;
+                        if ((ahora - entrada.ts) > state.tiempoCache)
+                             continue;
                         
                         const datos = entrada.data;
                         if (!datos) continue;
@@ -209,7 +217,8 @@
                 
                 // Si no está en caché, consultamos la API de Pokémon
                 const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(clave)}`);
-                if (!respuesta.ok) throw new Error('notfound');
+                if (!respuesta.ok) 
+                    throw new Error('notfound');
                 const datos = await respuesta.json();
 
                 // Guardamos en caché para futuras búsquedas
@@ -217,8 +226,10 @@
                     cache = cacheCompartido.obtenerCache();
                     const entrada = { data: datos, ts: Date.now() };
                     // Guardamos tanto por nombre como por ID para búsquedas futuras
-                    if (datos.name) cache[datos.name.toString().toLowerCase()] = entrada;
-                    if (datos.id !== undefined && datos.id !== null) cache[String(datos.id)] = entrada;
+                    if (datos.name) 
+                        cache[datos.name.toString().toLowerCase()] = entrada;
+                    if (datos.id !== undefined && datos.id !== null) 
+                        cache[String(datos.id)] = entrada;
                     cacheCompartido.establecerCache(cache);
                 } catch (e) {}
                 
@@ -371,9 +382,12 @@
                         } 
                     } catch(e) {}
                     
-                    if (html.contenedorPokemon) html.contenedorPokemon.style.display = "none";
-                    if (html.contenedorHabilidad) html.contenedorHabilidad.style.display = "none";
-                    if (html.contenedorError) html.contenedorError.style.display = "none";
+                    if (html.contenedorPokemon) 
+                        html.contenedorPokemon.style.display = "none";
+                    if (html.contenedorHabilidad) 
+                        html.contenedorHabilidad.style.display = "none";
+                    if (html.contenedorError) 
+                        html.contenedorError.style.display = "none";
                     
                     try {
                         const badgeDerecha = document.getElementById('badge-datos-derecha');
@@ -392,7 +406,8 @@
                 // Muestra un mensaje de carga con efecto de parpadeo
                 mostrarCargando() {
                     moduloBusqueda.utils.ocultarResultados();
-                    if (!html.contenedorError) return;
+                    if (!html.contenedorError) 
+                        return;
                     
                     html.contenedorError.style.display = "block";
                     html.contenedorError.className = "mensaje-cargando";
@@ -825,14 +840,17 @@
                             // Manejo de fallback si cacheCompartido falla
                             if (!resultado) {
                                 const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/${termino}`);
-                                if (!respuesta.ok) throw new Error();
+                                if (!respuesta.ok)
+                                     throw new Error();
                                 const datosPokemon = await respuesta.json();
                                 
                                 // Guardamos en caché para futuras búsquedas
                                 const cache = cacheCompartido.obtenerCache();
                                 const entrada = { data: datosPokemon, ts: Date.now() };
-                                if (datosPokemon.name) cache[datosPokemon.name.toString().toLowerCase()] = entrada;
-                                if (datosPokemon.id !== undefined && datosPokemon.id !== null) cache[String(datosPokemon.id)] = entrada;
+                                if (datosPokemon.name) 
+                                    cache[datosPokemon.name.toString().toLowerCase()] = entrada;
+                                if (datosPokemon.id !== undefined && datosPokemon.id !== null) 
+                                    cache[String(datosPokemon.id)] = entrada;
                                 cacheCompartido.establecerCache(cache);
                                 
                                 state.desdeCache = false;
@@ -991,9 +1009,12 @@
                         for (const d of tiposDefensor) {
                             const dLower = d.toString().toLowerCase();
                             // Verificamos relaciones de daño
-                            if (relaciones.double_damage_to.some(x => x.name === dLower)) multiplicador *= 2;
-                            if (relaciones.half_damage_to.some(x => x.name === dLower)) multiplicador *= 0.5;
-                            if (relaciones.no_damage_to.some(x => x.name === dLower)) multiplicador *= 0;
+                            if (relaciones.double_damage_to.some(x => x.name === dLower)) 
+                                multiplicador *= 2;
+                            if (relaciones.half_damage_to.some(x => x.name === dLower)) 
+                                multiplicador *= 0.5;
+                            if (relaciones.no_damage_to.some(x => x.name === dLower)) 
+                                multiplicador *= 0;
                         }
                     }
                     return multiplicador;
@@ -1001,7 +1022,12 @@
                 
                 // Suma todas las estadísticas base de un pokémon
                 sumarEstadisticasBase(datosPokemon) {
-                    return (datosPokemon.stats || []).reduce((s, st) => s + (st.base_stat || 0), 0);
+                   if (!datosPokemon || !datosPokemon.stats) return 0;
+                    let total = 0;
+                    for (const stat of datosPokemon.stats) {
+                        total += stat.base_stat || 0;
+                    }
+                    return total;
                 }
             },
 
