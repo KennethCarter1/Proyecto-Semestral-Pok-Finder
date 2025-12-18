@@ -1,71 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POKE-API</title>
+    <title>Buscar</title>
     <link rel="stylesheet" href="shared.css">
-    
 </head>
 <body>
-
-    <div class="KC-Aplicacion-Web">
-
+    <div class="Aplicacion-Web">
 
 
-        <!-- FONDO DE PANTALLA -->
-
-        <div class="KC-pokebola">
-            <div class="KC-rotar">
-                <div class="KC-mitad-superior"></div>
-                <div class="KC-mitad-inferior"></div>
-                <div class="KC-franja"></div>
-                <div class="KC-boton-central"></div>
-                <div class="KC-boton-interno"></div>
+        <div class="pokebola">
+            <div class="rotar">
+                <div class="mitad-superior"></div>
+                <div class="mitad-inferior"></div>
+                <div class="franja"></div>
+                <div class="boton-central"></div>
+                <div class="boton-interno"></div>
             </div>
         </div>
 
-        <div class="KC-Main">
+        <div class="Principal">
 
-            <!-- TITULO DE LA PAGINA -->
-
-                <div class="KC-Titulo">
-                    <h1>POKÉMON FINDER</h1>
-                </div>
+           
+            <div class="Titulo">
+                <h1>POKÉMON FINDER</h1>
+            </div>
                 
-            <!-- BARRA DE NAVEGACION -->
-
-                <div class="KC-navbar">
-                    <button class="KC-boton-primario">🔍BUSCAR</button>
-                    <a href="Historico.html">📜HISTÓRICO</a>
-                    <a href="vs.html">⚔️VS</a>
-                    <a href="Favoritos.html">❤️FAVORITOS</a>
-                </div>
-
-
-            <!-- AREA DE BUSQUEDA -->
-
-            <div class="KC-Pokemon-Busqueda">
-<div class="KC-campo-selector">
-    <select class="KC-seleccion" id="KC-modo-busqueda">
-        <option value="KC-pokemon">👾POKÉMON</option>
-        <option value="KC-habilidad">⚡HABILIDADES</option>
-    </select>
-</div>
-                <input type="text" class="KC-input-busqueda" placeholder="NOMBRE O ID...">
-                <button class="KC-boton-buscar">BUSCAR</button>
+            
+            <div class="navegacion">
+                <a href="index.html">🔍BUSCAR</a>
+                <a href="historico.html">📜HISTÓRICO</a>
+                <a href="vs.html">⚔️VS</a>
+                <a href="favoritos.html">❤️FAVORITOS</a>
             </div>
 
-            <!-- AREA DE RESULTADOS -->
 
-            <div class="KC-Resultado"></div>
+            <div class="Busqueda-Pokemon">
+                <div class="campo-selector">
+                    <select class="seleccion" id="modo-busqueda">
+                        <option value="pokemon">👾POKÉMON</option>
+                        <option value="habilidad">⚡HABILIDADES</option>
+                    </select>
+                </div>
+                <input type="text" class="entrada-busqueda" id="input-busqueda" placeholder="NOMBRE O ID...">
+                <button class="boton-buscar" id="boton-buscar">BUSCAR</button>
+            </div>
+
+  
+            <div id="alerta-error" class="alerta-error" style="display:none;"></div>
 
 
+            <div id="resultado-tarjeta" class="pokemon-detalle" style="display:none;">
+                <div class="contenedor-imagen-pokemon" id="imagen-pokemon"></div>
+                <h2 class="titulo-pokemon" id="titulo-pokemon"></h2>
+                <div class="linea-titulo-pokemon"></div>
+                <div class="lista-tipos" id="tipos-pokemon"></div>
+                <p class="pokemon-habilidades"><strong>HABILIDADES</strong></p>
+                <div class="lista-habilidades" id="habilidades-pokemon"></div>
+                <ul class="estadisticas-pokemon" id="estadisticas-pokemon"></ul>
+                <div class="corazon-favorito" id="corazon-pokemon"></div>
+                <div class="linea-cortada-titulo-pokemon"></div>
+                <div class="pokemon-evolucion">
+                    <strong>CADENA DE EVOLUCIÓN</strong>
+                    <div class="cadena-evolucion" id="evolucion-cadena"></div>
+                </div>
+            </div>
 
+
+            <div id="resultado-habilidad" class="detalle-habilidad" style="display:none;">
+                <div class="encabezado-habilidad">
+                    <span class="estrella" id="estrella-habilidad">✨</span>
+                    <span class="titulo-habilidad" id="titulo-habilidad"></span>
+                    <span class="id-habilidad" id="id-habilidad"></span>
+                </div>
+                <div class="linea-titulo-pokemon"></div>
+                <div class="titulo-efecto-habilidad">EFECTO</div>
+                <div class="texto-efecto-habilidad" id="efecto-habilidad"></div>
+                <div class="titulo-pokemon-habilidad" id="titulo-grid-habilidad"></div>
+                <div class="rejilla-pokemon-habilidad" id="grid-habilidad"></div>
+            </div>
         </div>
-
     </div>
-
-<script src="shared.js"></script>
+     <script src="shared.js"></script>
 </body>
 </html>

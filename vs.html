@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS</title>
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+    <div class="Aplicacion-Web">
 
+
+        <div class="pokebola">
+            <div class="rotar">
+                <div class="mitad-superior"></div>
+                <div class="mitad-inferior"></div>
+                <div class="franja"></div>
+                <div class="boton-central"></div>
+                <div class="boton-interno"></div>
+            </div>
+        </div>
+
+        <div class="Principal">
+            <div class="Titulo">
+                <h1>⚔️ POKÉMON VS ⚔️</h1>
+            </div>
+                
+            
+            <div class="navegacion">
+                <a href="index.html">🔍BUSCAR</a>
+                <a href="historico.html">📜HISTÓRICO</a>
+                <a href="vs.html">⚔️VS</a>
+                <a href="favoritos.html">❤️FAVORITOS</a>
+            </div>
+
+            
+            <div class="bloque-central">
+
+            <div class="fila-busqueda-principal">
+                <div class="grupo-busqueda">
+                    <div class="caja-busqueda-principal">
+                        <input id="poke1" class="entrada-busqueda-principal" placeholder="POKÉMON 1...">
+                    </div>
+                    <button id="buscar1" class="busqueda-roja">BUSCAR</button>
+                </div>
+
+                <div class="vs-pequeno">VS</div>
+
+                <div class="grupo-busqueda">
+                    <div class="caja-busqueda-principal">
+                        <input id="poke2" class="entrada-busqueda-principal" placeholder="POKÉMON 2...">
+                    </div>
+                    <button id="buscar2" class="busqueda-roja">BUSCAR</button>
+                </div>
+            </div>
+
+
+            <div class="overlay-batalla">
+                <div class="rectangulo-overlay">
+                    <span class="etiqueta-batallar">⚔️ ¡BATALLAR!</span>
+                </div>
+            </div>
+
+
+            <div class="tarjetas-centro">
+                <div id="card1" class="tarjeta-placeholder">?</div>
+                <div class="espadas-medio">⚔️</div>
+                <div id="card2" class="tarjeta-placeholder">?</div>
+            </div>
+            </div> 
+
+
+            <div class="caja-inferior">
+                <div class="espadas-grandes">⚔️</div>
+            </div>
+
+
+            <div id="battle-result" class="resultado-batalla" style="display:none;">
+                <h2 class="titulo-batalla">⚔️ RESULTADO DE LA BATALLA ⚔️</h2>
+                <div class="linea-punteada-batalla">-------------------------------------</div>
+
+                <div class="tarjetas-batalla">
+                    <div id="result-card-1" class="tarjeta-resultado"></div>
+                    <div class="vs-batalla">VS</div>
+                    <div id="result-card-2" class="tarjeta-resultado"></div>
+                </div>
+<div class="linea-punteada-batalla">------------------------------------</div>
+                
+                
+                <h3 class="titulo-analisis">📊 ANÁLISIS DE BATALLA</h3>
+                <div id="type-advantages" class="caja-analisis-tipo"></div>
+
+                <div class="grupo-analisis">
+                    <h3 class="subtitulo-analisis">📈 COMPARACIÓN DE STATS</h3>
+                    <div id="stat-comparison" class="caja-analisis">
+                        <div class="titulo-ventaja">⚡ VENTAJAS DE TIPO</div>
+                        <div class="divisor-ventaja"></div>
+                        <div class="lista-estadisticas"></div>
+                    </div>
+                </div>
+
+                <div class="grupo-analisis">
+                    <h3 class="subtitulo-analisis">🧮CÁLCULO DEL PUNTAJE</h3>
+                    <div id="score-calculation" class="caja-analisis"></div>
+                </div>
+            </div>
+
+</div>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>
