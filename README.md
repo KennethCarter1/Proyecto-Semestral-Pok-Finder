@@ -1,5 +1,9 @@
 # 🎮 Proyecto Semestral: PokéFinder - Aplicación Web con Consumo de API
 
+## Kenneth Carter
+## Ditzel De Gracia
+## Alan Ricketts
+
 ## 🎯 Objetivos de Aprendizaje
 
 Al completar este proyecto, el estudiante será capaz de:
